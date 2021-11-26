@@ -115,6 +115,9 @@ well.
 
 To install pyenv use
 
+```bash
+$ curl https://pyenv.run | bash
+```
 FALTA
 
 ### starship
