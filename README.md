@@ -4,7 +4,7 @@ In this repository I configure all the parameters to use the terminal and partic
 Neovim as a powerfull tool.
 
 This is not an original work. I use
-[Oscar Arbelaez dotfiles](https://github.com/odarbelaeze/dotfiles) as a guide.
+Oscar Arbelaez [dotfiles](https://github.com/odarbelaeze/dotfiles) as a guide.
 Furthermore, I know Oscar's work is based on the
 Jess Archer's [talk](https://www.youtube.com/watch?v=434tljD-5C8&ab_channel=JessArcher)
 in Vimconf 2021. In fact I almost change nothing from Oscar's repository. The key porpouse
@@ -25,9 +25,9 @@ improvements, including some features of Bash, ksh, and tcsh.
 
 In a terminal install zsh with
 
-"""bash
+```bash
 $ sudo apt-get install zsh
-"""
+```
 
 Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh
 configuration. It comes bundled with thousands of helpful functions, helpers, plugins,
@@ -35,9 +35,9 @@ themes.
 
 To install oh-my-zsh via curl use
 
-"""bash
+```bash
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-"""
+```
 
 ## Neovim
 
@@ -49,12 +49,12 @@ power with a new plugin architecture based on coprocesses.
 
 To install the last version of Neovim use
 
-"""bash
+```bash
 $ sudo apt-get update
 $ sudo add-apt-repository ppa:neovim-ppa/unstable
 $ sudo apt-get update
 $ sudo apt-get install neovim
-"""
+```
 
 However, remember that for using Neovim the command in the terminal is `nvim`.
 
@@ -67,9 +67,9 @@ in the same place.
 
 To install GNU Stow use
 
-"""bash
+```bash
 $ sudo apt-get install stow
-"""
+```
 
 ## ripgrep
 
@@ -79,9 +79,9 @@ hidden files/directories and binary files.
 
 To install ripgrep use
 
-"""bash
+```bash
 $ sudo apt-get install ripgrep
-"""
+```
 
 ## fzf
 
@@ -91,9 +91,9 @@ bookmarks, git commits, etc.
 
 To install fzf use
 
-"""bash
+```bash
 $ sudo apt-get install fzf
-"""
+```
 
 ## Antigen
 
@@ -103,9 +103,9 @@ setup. Antigen is to zsh, what Vundle is to vim.
 
 To install Antigen use
 
-"""bash
+```bash
 $ curl -L git.io/antigen > antigen.zsh
-"""
+```
 
 ## pyenv
 
@@ -123,9 +123,9 @@ starship is a minimal, blazing-fast, and infinitely customizable prompt for any 
 
 To install starship use
 
-"""bash
+```bash
 $ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-"""
+```
 
 ## kitty
 
@@ -133,6 +133,6 @@ kitty is a fast, feature-rich, GPU based terminal emulator.
 
 To install kitty use
 
-"""bash
+```bash
 $ curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-"""
+```
