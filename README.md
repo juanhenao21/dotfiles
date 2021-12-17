@@ -71,11 +71,30 @@ To install GNU Stow use
 $ sudo apt-get install stow
 ```
 
+### NVM
+
+NVM is a Node Version Manager tool. Using the NVM utility, you can install multiple node.js
+versions on a single system. You can also choose a specific Node version for applications.
+
+To install nvm use
+
+```bash
+$ curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+```
+
+With nvm you can install multiple node.js versions. For us the latest version is fine
+
+```bash
+$ nvm install node
+```
+
+Here, node is the alias for the latest version.
+
 ### ripgrep
 
 ripgrep is a line-oriented search tool that recursively searches the current directory for
 a regex pattern. By default, ripgrep will respect gitignore rules and automatically skip
-hidden files/directories and binary files. 
+hidden files/directories and binary files.
 
 To install ripgrep use
 
@@ -118,6 +137,7 @@ To install pyenv use
 ```bash
 $ curl https://pyenv.run | bash
 ```
+
 FALTA
 
 ### starship
@@ -140,6 +160,23 @@ To install kitty use
 $ curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 ```
 
+For a desktop integration on Linux, you need to install the `kitty.desktop` file.
+
+First, create a symbolic link to add kitty to PATH (assuming ~/.local/bin is in your PATH)
+
+```bash
+ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
+```
+
+Place the kitty.desktop file somewhere it can be found by the OS
+
+```bash
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+```
+
+Update the path to the kitty icon in the kitty.desktop file
+sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty.desktop
+
 ## Activation of the super powers
 
 First you need to clone this repository as
@@ -159,4 +196,22 @@ then use stow to configure Neovim
 ```bash
 $ mkdir -p ~/.config/nvim
 $ stow nvim
+```
+
+Finally, run Neovim
+
+```bash
+$ nvim
+```
+
+and inside Neovim run
+
+```vim
+:PlugInstall
+```
+
+and
+
+```vim
+:PlugUpdate
 ```
