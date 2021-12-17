@@ -33,9 +33,9 @@ set redrawtime=10000 "allow more time for loading syntax on large files
 let mapleader = ","
 nmap <leader>ev :edit ~/.config/nvim/init.vim<cr>
 nmap <leader>ec :edit ~/.config/nvim/coc-settings.json<cr>
-nmap <leader>sv :source ~/.config/nvim/init.vim<cr>
+nmap <leader>w :source ~/.config/nvim/init.vim<cr>
 
-nmap <leader>k :nohlsearch<cr>
+nmap <leader>nh :nohlsearch<cr>
 nmap <leader>Q :bufdo bdelete<cr>
 map gf :edit <cfile><cr>
 
@@ -50,9 +50,19 @@ nnoremap Y y$
 nnoremap <leader>p "+p
 nnoremap <leader>y "+y
 
+nnoremap <Leader>J J
+nnoremap <Leader>K K
+vnoremap <Leader>J J
+vnoremap <Leader>K K
+
+" Remap J and K to go down or up five lines for faster movement
+nnoremap J 5j
+nnoremap K 5k
+vnoremap J 5j
+vnoremap K 5k
+
 nnoremap n nzzzv
 nnoremap N Nzzzv
-nnoremap J mzJ`z
 
 imap jj <esc>
 imap kk <esc>
@@ -61,8 +71,13 @@ imap ;; <esc>A;<esc>
 imap ,, <esc>A,<esc>
 cmap w!! %!sudo tee > /dev/null %
 
-nmap <leader>w :w<cr>
+nmap <leader>s :w<cr>
+nmap <leader>S :wq<cr>
 nmap <leader>x :x<cr>
+
+" End of line
+nnoremap <Leader>f $
+vnoremap <Leader>f $
 
 " Plugins
 

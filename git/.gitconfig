@@ -1,13 +1,13 @@
 [user]
-	name = Oscar Arbelaez
-	email = oscar@arbelaez.dev
-	signingkey = 590C8B8D13D0C135
+	name = Juan Henao
+	email = juanhenao21@gmail.com
+	signingkey =
 [init]
 	defaultBranch = main
 [pull]
 	ff = only
 [core]
-	excludesfile = /home/oscar/.gitignore_global
+	excludesfile = /home/juan/.gitignore_global
 [push]
 	default = current
 [commit]

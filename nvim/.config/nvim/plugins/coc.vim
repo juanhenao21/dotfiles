@@ -65,7 +65,7 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>ga  <Plug>(coc-codeaction-line)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> <leader> k :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)

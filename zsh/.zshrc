@@ -22,6 +22,7 @@ alias gbsa='git checkout -q main && git for-each-ref refs/heads/ "--format=%(ref
 
 # Antigen plugin manager
 [ -f /usr/share/zsh/share/antigen.zsh ] && source /usr/share/zsh/share/antigen.zsh
+[ -f $HOME/bin/antigen.zsh ] && source $HOME/bin/antigen.zsh
 [ -f /usr/local/share/antigen/antigen.zsh ] && source /usr/local/share/antigen/antigen.zsh
 
 # Manage oh-my-zsh
