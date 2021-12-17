@@ -198,6 +198,20 @@ $ mkdir -p ~/.config/nvim
 $ stow nvim
 ```
 
+To prevent conflicts, you need to disable the current `.zshrc`, if any. You can create a
+backup file with
+
+```bash
+$ mv .zshrc .zshrc.back
+```
+
+Then, you need to run `stow` with every single folder in the repository folder. One example
+is
+
+```bash
+$ stow nvim
+```
+
 Finally, run Neovim
 
 ```bash
@@ -215,3 +229,19 @@ and
 ```vim
 :PlugUpdate
 ```
+
+Finally, you need to move `antigen.zsh` to a new folder using
+
+```bash
+$ mkdir .bin
+$ mv antigen.zsh .bin/
+```
+
+then open the `.zshrc` and copy the following line and add the path to `.bin/`
+
+```bash
+[ -f $HOME/bin/antigen.zsh ] && source $HOME/bin/antigen.zsh
+[ -f $HOME/.bin/antigen.zsh ] && source $HOME/.bin/antigen.zsh
+```
+
+And that is all! You can enjoy your new super terminal with all the powers of Neovim.
