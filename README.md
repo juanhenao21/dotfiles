@@ -82,6 +82,8 @@ To install nvm use
 $ curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 ```
 
+Then, you need to reboot your computer.
+
 With nvm you can install multiple node.js versions. For us the latest version is fine
 
 ```bash
@@ -132,13 +134,66 @@ pyenv lets you easily switch between multiple versions of Python. It's simple,
 unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing
 well.
 
+Before the installation of pyenv, it is suggested to install the following dependencies
+
+```bash
+$ sudo apt-get update
+$ sudo apt-get install make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+```
+
 To install pyenv use
 
 ```bash
 $ curl https://pyenv.run | bash
 ```
 
-FALTA
+Finally, you need to configure your shell's environment for Pyenv
+
+```bash
+$ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
+$ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
+$ echo 'eval "$(pyenv init --path)"' >> ~/.profile
+$ echo 'if [ -n "$PS1" -a -n "$BASH_VERSION" ]; then source ~/.bashrc; fi' >> ~/.profile
+
+$ echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+```
+
+You need to reboot the computer.
+
+You can check your python version using
+
+```bash
+$ python3 -V
+```
+
+To install a Python version with Pyenv, you need to select first the one you want, in
+this example we will check for Python3.10
+
+```bash
+$ pyenv install --list | grep "3.10"
+```
+
+We will install the "last" version. In this case, 3.10.4.
+
+```bash
+$ pyenv install 3.10.4
+```
+
+To check the installed versions use
+
+```bash
+$ pyenv versions
+```
+
+Now, we need to select the version we installed as the "global" python
+
+```bash
+$ pyenv global 3.10.4
+```
+
+and reboot the computer.
 
 ### starship
 
@@ -162,20 +217,26 @@ $ curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 
 For a desktop integration on Linux, you need to install the `kitty.desktop` file.
 
-First, create a symbolic link to add kitty to PATH (assuming ~/.local/bin is in your PATH)
+First, create a symbolic link to add kitty to PATH (assuming ~/.local/bin is in your PATH).
+You may need to create the `bin` folder inside `.local`
 
 ```bash
-ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
+$ ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
 ```
 
 Place the kitty.desktop file somewhere it can be found by the OS
 
 ```bash
-cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+$ cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
 ```
 
 Update the path to the kitty icon in the kitty.desktop file
-sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty.desktop
+
+```bash
+$ sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty.desktop
+```
+
+Then you need to reboot the computer.
 
 ## Activation of the super powers
 
@@ -205,11 +266,11 @@ backup file with
 $ mv .zshrc .zshrc.back
 ```
 
-Then, you need to run `stow` with every single folder in the repository folder. One example
+Then, you need to run `stow` with every single folder name in the repository folder. One example
 is
 
 ```bash
-$ stow nvim
+$ stow alacritty
 ```
 
 Finally, run Neovim
